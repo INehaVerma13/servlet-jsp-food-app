@@ -1,0 +1,261 @@
+/* ================= Orders Page Layout ================= */
+.orders-container {
+    position: relative;
+    z-index: 10;
+    max-width: 980px;
+    margin: 2.5rem auto 4rem;
+    padding: 0 1.5rem;
+    min-height: calc(100vh - 350px);
+}
+
+.orders-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 1.2rem;
+}
+
+.orders-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.orders-subtitle {
+    font-size: 0.95rem;
+    color: var(--slate);
+}
+
+.orders-count-badge {
+    background: #fff7ed;
+    color: var(--primary);
+    border: 1px solid #fed7aa;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+/* Empty State Card */
+.empty-orders-card {
+    background: var(--card-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 520px;
+    margin: 3rem auto;
+}
+
+.empty-icon-wrap {
+    width: 80px;
+    height: 80px;
+    background: #fff7ed;
+    color: var(--primary);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.empty-orders-card h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.empty-orders-card p {
+    font-size: 0.95rem;
+    color: var(--slate);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.btn-browse-food {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.85rem 1.8rem;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 14px rgba(255, 96, 38, 0.28);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-browse-food:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 96, 38, 0.4);
+}
+
+/* Orders Grid & Card */
+.orders-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.order-card {
+    background: var(--card-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.order-ref {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.order-id-label {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.3px;
+}
+
+.order-timestamp {
+    font-size: 0.85rem;
+    color: var(--slate);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Status Badges */
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+}
+
+.status-placed {
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #fed7aa;
+}
+
+.status-delivered {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+
+.status-cancelled {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+/* Body Info */
+.order-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    background: #f8fafc;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+}
+
+.order-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.info-value {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.highlight-amount {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+/* Card Actions */
+.order-card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-reorder {
+    background: #ffffff;
+    color: var(--dark);
+    border: 1.5px solid #e2e8f0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.55rem 1.2rem;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: all 0.2s ease;
+}
+
+.btn-reorder:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #fff7ed;
+}
+
+@media (max-width: 600px) {
+    .orders-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    .order-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .order-card-body {
+        grid-template-columns: 1fr;
+    }
+}

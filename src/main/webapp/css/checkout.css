@@ -1,0 +1,331 @@
+/* ================= Checkout Page Styles ================= */
+
+/* Checkout Wrapper */
+.checkout-wrapper {
+	position: relative;
+	z-index: 10;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 3rem 1.5rem 6rem;
+	width: 100%;
+}
+
+.checkout-heading {
+	font-size: 2rem;
+	font-weight: 800;
+	color: var(--dark);
+	letter-spacing: -0.5px;
+	margin-bottom: 2rem;
+}
+
+.checkout-grid {
+	display: grid;
+	grid-template-columns: 1.65fr 1fr;
+	gap: 2.5rem;
+	align-items: start;
+}
+
+/* Cards */
+.checkout-card {
+	background: var(--card-surface);
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--border-subtle);
+	box-shadow: var(--shadow-card);
+	padding: 2rem;
+	margin-bottom: 2rem;
+}
+
+.card-heading {
+	font-size: 1.25rem;
+	font-weight: 800;
+	color: var(--dark);
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 0.8rem;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.card-heading i {
+	color: var(--primary);
+	font-size: 1.15rem;
+}
+
+/* Forms */
+.form-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.2rem;
+	margin-bottom: 1.2rem;
+}
+
+.form-group {
+	margin-bottom: 1.2rem;
+}
+
+.form-group label {
+	display: block;
+	font-size: 0.88rem;
+	font-weight: 700;
+	color: var(--dark);
+	margin-bottom: 0.45rem;
+}
+
+.form-control {
+	width: 100%;
+	padding: 0.85rem 1.1rem;
+	font-size: 0.95rem;
+	border-radius: 12px;
+	border: 1.5px solid #e2e8f0;
+	background: #ffffff;
+	color: var(--dark);
+	outline: none;
+	transition: all 0.2s;
+}
+
+.form-control:focus {
+	border-color: var(--primary);
+	box-shadow: 0 0 0 3px rgba(255, 96, 38, 0.12);
+}
+
+/* Tag Pills (Home / Work / Other) */
+.tag-pills {
+	display: flex;
+	gap: 0.75rem;
+	margin-top: 0.35rem;
+}
+
+.tag-pill {
+	cursor: pointer;
+	border: 1.5px solid #e2e8f0;
+	padding: 0.5rem 1.2rem;
+	border-radius: 9999px;
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: var(--slate);
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	transition: all 0.2s;
+}
+
+.tag-pill input[type="radio"] {
+	display: none;
+}
+
+.tag-pill:hover {
+	border-color: #fed7aa;
+	background: #fff7ed;
+}
+
+.tag-pill:has(input:checked) {
+	border-color: var(--primary);
+	background: #fff7ed;
+	color: var(--primary);
+}
+
+/* Delivery Instructions */
+.instruction-chips {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	gap: 0.75rem;
+	margin-bottom: 1rem;
+}
+
+.instruction-chip {
+	border: 1.5px solid #e2e8f0;
+	border-radius: 12px;
+	padding: 0.75rem 0.85rem;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.4rem;
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: var(--slate);
+	transition: all 0.2s;
+}
+
+.instruction-chip i {
+	font-size: 1.1rem;
+	color: var(--slate);
+}
+
+.instruction-chip input[type="checkbox"] {
+	display: none;
+}
+
+.instruction-chip:hover {
+	border-color: #fed7aa;
+	background: #fff7ed;
+}
+
+.instruction-chip:has(input:checked) {
+	border-color: var(--primary);
+	background: #fff7ed;
+	color: var(--primary);
+}
+
+.instruction-chip:has(input:checked) i {
+	color: var(--primary);
+}
+
+/* Payment Radio Options */
+.payment-options {
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+}
+
+.payment-radio-label {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1.1rem 1.25rem;
+	border-radius: 14px;
+	border: 1.5px solid #e2e8f0;
+	cursor: pointer;
+	transition: all 0.2s;
+	font-weight: 600;
+	color: var(--dark);
+}
+
+.payment-radio-label input[type="radio"] {
+	accent-color: var(--primary);
+	width: 18px;
+	height: 18px;
+}
+
+.payment-radio-label:hover {
+	border-color: #fed7aa;
+	background: #fff7ed;
+}
+
+.payment-icon {
+	font-size: 1.4rem;
+	color: var(--primary);
+}
+
+/* Order Summary Box (Sticky Right) */
+.order-summary-box {
+	background: var(--card-surface);
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--border-subtle);
+	box-shadow: var(--shadow-card);
+	padding: 2rem;
+	position: sticky;
+	top: 90px;
+}
+
+.summary-item-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.85rem;
+	font-size: 0.92rem;
+	color: var(--slate);
+}
+
+.summary-item-name {
+	font-weight: 700;
+	color: var(--dark);
+}
+
+.calc-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.75rem;
+	font-size: 0.92rem;
+	color: var(--slate);
+	font-weight: 600;
+}
+
+.calc-row.highlight {
+	color: #10b981;
+}
+
+.calc-divider {
+	height: 1px;
+	background: #e2e8f0;
+	margin: 1.2rem 0;
+}
+
+.grand-total-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.35rem;
+	font-weight: 800;
+	color: var(--dark);
+	margin-bottom: 1.6rem;
+}
+
+.grand-total-row span:last-child {
+	color: var(--primary);
+}
+
+.btn-place-order {
+	display: block;
+	width: 100%;
+	background: var(--primary-gradient);
+	color: #ffffff;
+	border: none;
+	padding: 1.1rem;
+	border-radius: 12px;
+	font-weight: 800;
+	font-size: 1rem;
+	cursor: pointer;
+	box-shadow: 0 4px 15px rgba(255, 96, 38, 0.28);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-place-order:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 22px rgba(255, 96, 38, 0.38);
+}
+
+.policy-card {
+	background: #f8fafc;
+	border: 1px dashed #cbd5e1;
+	border-radius: 12px;
+	padding: 0.85rem 1rem;
+	font-size: 0.8rem;
+	color: #64748b;
+	line-height: 1.45;
+	margin-top: 1.2rem;
+}
+
+@media ( max-width : 960px) {
+	.checkout-grid {
+		grid-template-columns: 1fr;
+	}
+	.form-row {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Container for each payment radio + its expandable details */
+.payment-option-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* 1. Hide all subforms by default */
+.payment-subform {
+    display: none;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+/* 2. Pure CSS: Reveal subform ONLY when its corresponding radio is checked */
+.payment-option-block:has(input[type="radio"]:checked) .payment-subform {
+    display: block;
+}

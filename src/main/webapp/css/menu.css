@@ -1,0 +1,968 @@
+/* Page Base & Pure White Background */
+.menu-body {
+    background-color: #ffffff !important;
+    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Navbar Drop Shadow (No line, gentle shadow) */
+.swiggy-nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); /* Soft natural shadow */
+}
+
+.menu-main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px 16px 60px;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/* Floating Sticky MENU Widget (Pinned to corner of container) */
+.floating-menu-widget {
+    position: fixed;
+    bottom: 30px;
+    right: max(24px, calc((100vw - 800px) / 2 + 10px));
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    z-index: 9999;
+    transition: transform 0.2s ease;
+}
+
+.floating-menu-widget:hover {
+    transform: scale(1.05);
+}
+
+/* Breadcrumbs */
+.page-breadcrumbs {
+    font-size: 0.72rem;
+    color: #93959f;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.page-breadcrumbs a {
+    text-decoration: none;
+    color: #93959f;
+}
+
+.page-breadcrumbs .active-crumb {
+    color: #282c3f;
+    font-weight: 600;
+}
+
+/* Restaurant Title */
+.rest-heading {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #020617;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.4px;
+}
+
+/* 2. Service Tabs: Bold black text, NO grey border line underneath */
+.service-tabs {
+    display: flex;
+    gap: 28px;
+    border: none !important; /* No extra grey line */
+    margin-bottom: 14px;
+}
+
+.service-tab {
+    background: none;
+    border: none;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #686b78;
+    padding: 0 0 8px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.service-tab.active {
+    color: #020617 !important; /* Bold black text */
+    font-weight: 800;
+}
+
+.service-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5px;
+    background-color: #fc8019; /* Orange underline directly above image */
+    border-radius: 4px;
+}
+
+/* Hero Banner Image */
+.restaurant-hero-banner {
+    width: 100%;
+    height: 350px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Restaurant Info Card */
+.restaurant-meta-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    border: 1px solid #e9e9eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+}
+
+.meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 0.98rem;
+    color: #282c3f;
+    margin-bottom: 4px;
+}
+
+.meta-rating-pill {
+    color: #15803d;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.meta-dot {
+    color: #93959f;
+}
+
+.cuisine-tag {
+    color: #fc8019;
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.timing-row {
+    font-size: 0.84rem;
+    color: #686b78;
+    margin-bottom: 16px;
+}
+
+.timing-row .open-status {
+    color: #15803d;
+    font-weight: 700;
+}
+
+/* 3. Delivery Tracker: No line under North Indian/timing row */
+.delivery-tracker {
+    display: flex;
+    gap: 12px;
+    padding-top: 4px;
+    border-top: none !important; /* No horizontal line */
+}
+
+.tracker-bullet-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.tracker-circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #c2c3c9;
+}
+
+.tracker-line {
+    width: 1.5px;
+    height: 22px;
+    background: #c2c3c9;
+}
+
+.tracker-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.84rem;
+}
+
+.tracker-row strong {
+    color: #282c3f;
+    margin-right: 6px;
+}
+
+.tracker-row span {
+    color: #686b78;
+}
+
+/* 4. Darker Gray Search Bar with Centered Placeholder */
+.menu-search-wrapper {
+    margin-bottom: 22px;
+}
+
+.search-input-box {
+    position: relative;
+    background: #e2e8f0; /* Darker, crisp gray */
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-input-box:hover {
+    background: #cbd5e1;
+}
+
+.search-input-box input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 13px 40px;
+    font-size: 0.92rem;
+    color: #282c3f;
+    text-align: center; /* Centered placeholder text */
+    cursor: pointer;
+}
+
+.search-input-box input:focus {
+    cursor: text;
+    text-align: left;
+    padding-left: 18px;
+}
+
+.search-input-box .search-icon {
+    position: absolute;
+    right: 18px;
+    color: #475569;
+    font-size: 0.95rem;
+    pointer-events: none;
+}
+
+/* Filter Toggles */
+.menu-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.pill-toggle {
+    background: #ffffff;
+    border: 1px solid #d4d5d9;
+    border-radius: 20px;
+    padding: 6px 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pill-toggle .toggle-switch {
+    width: 26px;
+    height: 14px;
+    background: #d4d5d9;
+    border-radius: 10px;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.pill-toggle .toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.veg-pill.active {
+    border-color: #0f8a65;
+    background: #f0fdf4;
+}
+
+.veg-pill.active .toggle-switch {
+    background: #0f8a65;
+}
+
+.veg-pill.active .toggle-switch::after {
+    transform: translateX(12px);
+}
+
+.nonveg-pill.active {
+    border-color: #e43b4f;
+    background: #fef2f2;
+}
+
+.nonveg-pill.active .toggle-switch {
+    background: #e43b4f;
+}
+
+.nonveg-pill.active .toggle-switch::after {
+    transform: translateX(12px);
+}
+
+.text-pill {
+    background: #ffffff;
+    border: 1px solid #d4d5d9;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #3e4152;
+    cursor: pointer;
+}
+
+.text-pill.active {
+    background: #282c3f;
+    color: #ffffff;
+    border-color: #282c3f;
+}
+
+/* 5. Streamlined Category (No outer box, streams directly onto white page) */
+.menu-category-stream {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 30px;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+}
+
+.category-header h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #282c3f;
+    margin: 0;
+}
+
+/* Dish Stream with Dark Divider */
+.dish-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 28px 0;
+    border-bottom: 1.5px solid #cbd5e1;
+}
+
+.dish-item-row:last-child {
+    border-bottom: none;
+}
+
+.dish-item-row.hidden-item {
+    display: none;
+}
+
+/* Dish Info */
+.dish-info-col {
+    flex: 1;
+}
+
+.dish-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.food-badge {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.food-badge.veg {
+    border: 1.8px solid #0f8a65;
+}
+
+.food-badge.veg .badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #0f8a65;
+    border-radius: 50%;
+}
+
+.food-badge.non-veg {
+    border: 1.8px solid #e43b4f;
+}
+
+.food-badge.non-veg .badge-dot {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 7.5px solid #e43b4f;
+}
+
+.bestseller-star-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #ee5f73;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.dish-title-text {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #282c3f;
+    margin: 0 0 6px 0;
+}
+
+.dish-price-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #3e4152;
+    margin-bottom: 8px;
+}
+
+.dish-rating-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #15803d;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dish-description-text {
+    font-size: 0.88rem;
+    color: #7e808c;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 520px;
+}
+
+/* Action Box & Larger ADD Button with Gray Hover */
+.dish-action-col {
+    flex-shrink: 0;
+    width: 156px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dish-photo-box {
+    position: relative;
+    width: 156px;
+    height: 144px;
+    border-radius: 14px;
+}
+
+.dish-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn-dish-add {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    color: #1ba672;
+    border: 1px solid #d4d5d9;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 10px 42px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: all 0.15s ease;
+}
+
+.btn-dish-add:hover {
+    background: #e5e7eb;
+    color: #15803d;
+}
+
+.dish-counter-box {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border: 1px solid #1ba672;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.counter-btn {
+    background: none;
+    border: none;
+    color: #1ba672;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 6px 14px;
+    cursor: pointer;
+}
+
+.counter-btn:hover {
+    background: #f0fdf4;
+}
+
+.counter-val {
+    color: #1ba672;
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 0 6px;
+}
+
+.sold-out-pill {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e2e8f0;
+    color: #64748b;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 8px;
+}
+
+.customisable-subtext {
+    font-size: 0.68rem;
+    color: #93959f;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* 6. Clean "View full menu ⌄" Text Link */
+.view-menu-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 28px 0 16px;
+    padding: 0;
+}
+
+.view-menu-link {
+    background: none;
+    border: none;
+    color: #fc8019;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+}
+
+.view-menu-link:hover {
+    text-decoration: underline;
+}
+
+/* Related Restaurants Horizontal Carousel */
+.related-rest-section {
+    margin: 40px 0;
+}
+
+.related-rest-section h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #282c3f;
+    margin-bottom: 16px;
+}
+
+.related-carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scroll-behavior: smooth;
+}
+
+.related-card {
+    flex: 0 0 170px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.related-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.related-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.related-card h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #282c3f;
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.related-card p {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #15803d;
+    margin: 0 0 2px 0;
+}
+
+.related-card span {
+    font-size: 0.72rem;
+    color: #93959f;
+}
+
+/* About Outlet Card */
+.about-outlet-block {
+    margin-bottom: 30px;
+}
+
+.about-outlet-block h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #282c3f;
+    margin-bottom: 16px;
+}
+
+.about-card-box {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #e9e9eb;
+}
+
+.about-card-box h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #282c3f;
+    margin: 0 0 6px 0;
+}
+
+.about-card-box p {
+    font-size: 0.84rem;
+    color: #686b78;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+}
+
+.see-more-link {
+    background: none;
+    border: none;
+    color: #fc8019;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* FAQs Section */
+.faq-section {
+    margin-bottom: 30px;
+}
+
+.faq-section h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #282c3f;
+    margin-bottom: 16px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e9e9eb;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #282c3f;
+}
+
+.faq-arrow {
+    transition: transform 0.2s ease;
+    color: #686b78;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-out;
+}
+
+.faq-answer p {
+    font-size: 0.84rem;
+    color: #686b78;
+    line-height: 1.5;
+    margin: 12px 0 0 0;
+}
+
+.faq-item.open .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-item.open .faq-answer {
+    max-height: 120px;
+}
+
+/* Disclaimer & FSSAI */
+.disclaimer-section {
+    padding: 24px 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.disclaimer-section h4 {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #282c3f;
+    margin: 0 0 8px 0;
+}
+
+.disclaimer-section ul {
+    margin: 0 0 16px 0;
+    padding-left: 18px;
+    font-size: 0.78rem;
+    color: #93959f;
+    line-height: 1.6;
+}
+
+.fssai-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: #93959f;
+    margin-bottom: 14px;
+}
+
+.fssai-logo {
+    font-weight: 900;
+    font-style: italic;
+    color: #686b78;
+    border-right: 1px solid #d4d5d9;
+    padding-right: 12px;
+}
+
+.outlet-legal-info strong {
+    font-size: 0.88rem;
+    color: #282c3f;
+}
+
+.outlet-legal-info p {
+    font-size: 0.82rem;
+    color: #93959f;
+    margin: 4px 0 0 0;
+}
+
+/* FoodWalla Footer */
+.foodwalla-footer {
+    background: #f1f2f6;
+    border-top: 1px solid #e2e8f0;
+    padding: 50px 0 40px;
+}
+
+.footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer-brand-col .footer-logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #fc8019;
+    margin-bottom: 6px;
+}
+
+.footer-brand-col p {
+    font-size: 0.8rem;
+    color: #93959f;
+}
+
+.footer-links-col h5 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #282c3f;
+    margin: 0 0 12px 0;
+}
+
+.footer-links-col a {
+    display: block;
+    text-decoration: none;
+    color: #686b78;
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+}
+
+.footer-links-col a:hover {
+    color: #fc8019;
+}
+
+
+
+/* Modal Overlay & Backdrop */
+.swiggy-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(40, 44, 63, 0.6); /* Soft dark backdrop */
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Modal Card */
+.swiggy-modal-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    animation: modalSlideUp 0.2s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 12px 0;
+}
+
+.modal-desc {
+    font-size: 0.92rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0 0 26px 0;
+}
+
+/* Modal Buttons Row */
+.modal-btn-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* "NO" Button: White with Green Border */
+.btn-modal-no {
+    flex: 1;
+    background: #ffffff;
+    border: 2px solid #0f8a65;
+    color: #0f8a65;
+    padding: 12px 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-modal-no:hover {
+    background: #f0fdf4;
+}
+
+/* "YES, START AFRESH" Button: Solid Green */
+.btn-modal-yes {
+    width: 100%;
+    background: #0f8a65;
+    border: 2px solid #0f8a65;
+    color: #ffffff;
+    padding: 12px 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-modal-yes:hover {
+    background: #0d7a59;
+}

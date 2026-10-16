@@ -1,0 +1,402 @@
+/* ================= Order Confirmation Layout ================= */
+.confirm-wrapper {
+    position: relative;
+    z-index: 10;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+}
+
+.confirm-card {
+    background: var(--card-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    width: 100%;
+    max-width: 640px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Celebration Pill Badge */
+.celebration-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ecfdf5;
+    color: #059669;
+    border: 1.5px solid #a7f3d0;
+    padding: 0.45rem 1.2rem;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.confirm-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.6px;
+    margin-bottom: 0.5rem;
+}
+
+.confirm-subtitle {
+    font-size: 0.95rem;
+    color: var(--slate);
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+}
+
+/* ================= 3D / Flat Delivery Animation ================= */
+.delivery-stage {
+    position: relative;
+    height: 120px;
+    background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1.8rem;
+    border: 1px solid #bae6fd;
+}
+
+/* Floating Clouds */
+.sky-elements {
+    position: absolute;
+    top: 15px;
+    width: 100%;
+}
+
+.cloud {
+    position: absolute;
+    color: #ffffff;
+    font-size: 1.5rem;
+    opacity: 0.85;
+}
+
+.cloud-1 {
+    left: -40px;
+    animation: driftClouds 16s linear infinite;
+}
+
+.cloud-2 {
+    left: -80px;
+    top: 20px;
+    font-size: 1.1rem;
+    animation: driftClouds 22s linear infinite 5s;
+}
+
+@keyframes driftClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(700px); }
+}
+
+/* Vehicle Runner */
+.vehicle-runner {
+    position: absolute;
+    bottom: 22px;
+    left: 45%;
+    display: flex;
+    align-items: center;
+    animation: vehicleBounce 0.4s infinite alternate ease-in-out;
+}
+
+.scooter-body {
+    position: relative;
+    font-size: 2.8rem;
+    color: var(--primary);
+    filter: drop-shadow(0 4px 8px rgba(255, 96, 38, 0.3));
+}
+
+.food-bag {
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    font-size: 1rem;
+    color: #0f172a;
+    background: #fed7aa;
+    border-radius: 4px;
+    padding: 1px 3px;
+}
+
+@keyframes vehicleBounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Speed Lines behind Vehicle */
+.speed-lines {
+    width: 25px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 96, 38, 0.7));
+    position: absolute;
+    left: -20px;
+    bottom: 12px;
+    border-radius: 9999px;
+    animation: speedPulse 0.3s infinite alternate;
+}
+
+@keyframes speedPulse {
+    0% { width: 15px; opacity: 0.3; }
+    100% { width: 30px; opacity: 0.9; }
+}
+
+/* Road & Dashes */
+.road-track {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    background: #334155;
+    display: flex;
+    align-items: center;
+}
+
+.road-dashes {
+    width: 200%;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #ffffff,
+        #ffffff 18px,
+        transparent 18px,
+        transparent 36px
+    );
+    animation: roadMove 1s linear infinite;
+}
+
+@keyframes roadMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-36px); }
+}
+
+/* ================= ETA Banner ================= */
+.delivery-eta-banner {
+    background: #fff7ed;
+    border: 1.5px solid #fed7aa;
+    border-radius: 14px;
+    padding: 1rem 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.eta-left {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    text-align: left;
+}
+
+.eta-left i {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.eta-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--slate);
+    letter-spacing: 0.5px;
+}
+
+.eta-time {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.eta-live-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: #ffffff;
+    padding: 0.35rem 0.8rem;
+    border-radius: 9999px;
+    border: 1px solid #fed7aa;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulseGlow 1.2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+/* ================= 4-Step Progress Tracker ================= */
+.order-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+}
+
+.step-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 2;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--slate);
+    border: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+.step-node.active .step-circle {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(255, 96, 38, 0.3);
+}
+
+.step-text {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--slate);
+}
+
+.step-node.active .step-text {
+    color: var(--dark);
+}
+
+.step-line {
+    flex: 1;
+    height: 3px;
+    background: #e2e8f0;
+    margin: 0 0.4rem -1.2rem;
+    z-index: 1;
+}
+
+.step-line.active {
+    background: var(--primary);
+}
+
+/* ================= Order Meta Box ================= */
+.order-meta-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    padding: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.meta-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--slate);
+    letter-spacing: 0.6px;
+}
+
+.meta-value {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.status-badge {
+    color: #059669;
+    background: #ecfdf5;
+    padding: 0.15rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    width: fit-content;
+}
+
+.highlight-price {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* Actions */
+.confirm-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary-action,
+.btn-secondary-action {
+    flex: 1;
+    padding: 0.95rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary-action {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(255, 96, 38, 0.28);
+}
+
+.btn-primary-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(255, 96, 38, 0.4);
+}
+
+.btn-secondary-action {
+    background: #ffffff;
+    color: var(--slate);
+    border: 1.5px solid #e2e8f0;
+}
+
+.btn-secondary-action:hover {
+    border-color: #cbd5e1;
+    color: var(--dark);
+    background: #f8fafc;
+}
+
+@media (max-width: 600px) {
+    .confirm-card {
+        padding: 2.2rem 1.4rem;
+    }
+    .confirm-actions {
+        flex-direction: column;
+    }
+    .order-meta-box {
+        grid-template-columns: 1fr;
+    }
+}

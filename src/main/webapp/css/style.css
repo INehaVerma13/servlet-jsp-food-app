@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #ff6026;
+    --primary-hover: #e54f18;
+    --primary-gradient: linear-gradient(135deg, #ff6026 0%, #ff8533 100%);
+    --dark: #0f172a;
+    --slate: #64748b;
+    --light-bg: #f8fafc;
+    --card-surface: #ffffff;
+    --border-subtle: #f1f5f9;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --shadow-card: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 10px 25px -4px rgba(15, 23, 42, 0.06);
+    --shadow-hover: 0 20px 35px -6px rgba(255, 96, 38, 0.12), 0 12px 20px -8px rgba(15, 23, 42, 0.08);
+}
+
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Global Ambient Orbs */
+.bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+}
+.bg-orb-1 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(255, 96, 38, 0.18), transparent 70%);
+    top: -100px;
+    left: -120px;
+    animation: orbMove 12s infinite alternate ease-in-out;
+}
+.bg-orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.14), transparent 70%);
+    top: 30%;
+    right: -150px;
+    animation: orbMove 16s infinite alternate ease-in-out;
+}
+.bg-orb-3 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(244, 63, 94, 0.12), transparent 70%);
+    bottom: -50px;
+    left: 20%;
+    animation: orbMove 14s infinite alternate ease-in-out;
+}
+
+@keyframes orbMove {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.08); }
+    100% { transform: translateY(20px) scale(0.96); }
+}
+
+/* Master Navbar */
+.app-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.brand-icon {
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+.brand-accent {
+    color: var(--primary);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--slate);
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Clean Sign In Button */
+.btn-nav-login {
+    background: var(--primary-gradient);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.55rem 1.35rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 14px rgba(255, 96, 38, 0.28);
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.btn-nav-login:hover {
+    box-shadow: 0 6px 18px rgba(255, 96, 38, 0.38);
+    transform: translateY(-1px);
+}
+
+/* Logged-in User Pill */
+.nav-user-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background: #fff7ed;
+    border: 1px solid #ffedd5;
+    padding: 0.35rem 0.85rem 0.35rem 0.45rem;
+    border-radius: 9999px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-user-pill:hover {
+    background: #ffedd5;
+    border-color: #fed7aa;
+}
+
+/* ================= User Profile Avatar ================= */
+.nav-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: var(--dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    
+}
+
+.nav-avatar:hover {
+    background: #fff7ed;
+    color: var(--primary);
+    border-color: #fed7aa;
+}
+
+
+.nav-user-pill .nav-username {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.nav-logout-btn {
+    color: #ef4444;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.45rem 1rem;
+    border-radius: 9999px;
+    border: 1.5px solid #fee2e2;
+    background: #fff5f5;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s ease;
+}
+
+.nav-logout-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+    border-color: #ef4444;
+}
+
+/* ================= Universal Footer ================= */
+.app-footer {
+    position: relative;
+    z-index: 10;
+    background: #0f172a;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 3rem;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.3px;
+}
+
+.footer-brand {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.footer-brand .brand-icon {
+    color: var(--primary);
+}
+
+.footer-brand .brand-accent {
+    color: var(--primary);
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+    color: #94a3b8;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    background: #1e293b;
+    color: #cbd5e1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-socials a:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.7rem;
+}
+
+.footer-col ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.footer-col ul li a i {
+    font-size: 0.7rem;
+    color: #64748b;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.footer-col ul li a:hover i {
+    color: var(--primary);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.9rem;
+}
+
+.contact-item i {
+    color: var(--primary);
+    font-size: 0.95rem;
+    width: 16px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.footer-bottom strong {
+    color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .app-navbar {
+        padding: 1rem 1.5rem;
+    }
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
